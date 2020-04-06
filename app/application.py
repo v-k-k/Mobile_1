@@ -13,6 +13,8 @@ class Application:
     @staticmethod
     def app_dir():
         curr_dir = os.getcwd()
-        tmp = curr_dir.split('\\') + ["app_bin", "Boxing Timer.apk"]
-        double_splitter = '\\' * 2
-        return double_splitter.join(tmp)
+        splitter = os.sep
+        if os.name == 'nt':
+            splitter = os.sep * 2
+        tmp = curr_dir.split(splitter) + ["app_bin", "Boxing Timer.apk"]
+        return splitter.join(tmp)

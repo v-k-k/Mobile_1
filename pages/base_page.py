@@ -7,7 +7,7 @@ class BasePage:
     def __init__(self, driver):
         self.driver = driver
         self.action = TouchAction(driver)
-        self.wait = WebDriverWait(driver, 5)
+        self.wait = WebDriverWait(driver, 10)
         self.window = None
 
     @staticmethod
